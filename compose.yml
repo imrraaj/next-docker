@@ -1,5 +1,11 @@
 services:
-  web:
+  next-docker:
+    container_name: "next-docker"
     build: .
-    ports:
-      - "3000:3000"
+    networks:
+      - server_network
+
+networks:
+  server_network:
+    external: true
+
